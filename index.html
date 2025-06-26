@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Realistic CSS Pikachu</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Pikachu</title>
+    <link rel="stylesheet" href="pikachu.css">
 </head>
 <body>
-  <div class="pikachu">
-    <div class="ear left"></div>
-    <div class="ear right"></div>
-
-    <div class="head">
-      <div class="eye left"><div class="shine"></div></div>
-      <div class="eye right"><div class="shine"></div></div>
-      <div class="nose"></div>
-      <div class="mouth">
-        <div class="smile"></div>
-        <div class="tongue"></div>
-      </div>
-      <div class="cheek left"></div>
-      <div class="cheek right"></div>
+    <div class="pikachu-container">
+        <!-- Ears -->
+        <div class="ear left">
+            <div class="ear-tip"></div>
+        </div>
+        <div class="ear right">
+            <div class="ear-tip"></div>
+        </div>
+        
+        <!-- Head -->
+        <div class="head">
+            <!-- Eyes -->
+            <div class="eye left">
+                <div class="eye-shine"></div>
+            </div>
+            <div class="eye right">
+                <div class="eye-shine"></div>
+            </div>
+            
+            <!-- Eyebrows -->
+            <div class="eyebrow left"></div>
+            <div class="eyebrow right"></div>
+            
+            <!-- Nose -->
+            <div class="nose"></div>
+            
+            <!-- Mouth -->
+            <div class="mouth">
+                <div class="smile"></div>
+                <div class="tongue"></div>
+            </div>
+            
+            <!-- Cheeks -->
+            <div class="cheek left">
+                <div class="cheek-detail"></div>
+            </div>
+            <div class="cheek right">
+                <div class="cheek-detail"></div>
+            </div>
+        </div>
+        
+        <!-- Body -->
+        <div class="body">
+            <div class="stripe"></div>
+        </div>
+        
+        <!-- Arms -->
+        <div class="arm left">
+            <div class="hand"></div>
+        </div>
+        <div class="arm right">
+            <div class="hand"></div>
+        </div>
+        
+        <!-- Feet -->
+        <div class="foot left">
+            <div class="toe left"></div>
+            <div class="toe middle"></div>
+            <div class="toe right"></div>
+        </div>
+        <div class="foot right">
+            <div class="toe left"></div>
+            <div class="toe middle"></div>
+            <div class="toe right"></div>
+        </div>
+        
+        <!-- Tail -->
+        <div class="tail">
+            <div class="tail-stripe top"></div>
+            <div class="tail-stripe middle"></div>
+            <div class="tail-stripe bottom"></div>
+        </div>
+        
+        <!-- Back Detail -->
+        <div class="back-stripe"></div>
     </div>
-
-    <div class="body">
-      <div class="stripe"></div>
-      <div class="arm left"></div>
-      <div class="arm right"></div>
-      <div class="foot left">
-        <div class="claw"></div>
-      </div>
-      <div class="foot right">
-        <div class="claw"></div>
-      </div>
-    </div>
-
-    <div class="tail"></div>
-  </div>
 </body>
 </html>
