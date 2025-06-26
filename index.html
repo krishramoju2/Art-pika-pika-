@@ -3,53 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Pikachu</title>
+    <title>Pikachu CSS Art</title>
     <style>
-        /* Global Styles */
-        body {
+        /* Reset and Base Styles */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
             background: #fff89a;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            font-family: Arial, sans-serif;
         }
-
+        
         /* Pikachu Container */
-        .pikachu-container {
+        .pikachu {
             position: relative;
-            width: 400px;
-            height: 600px;
+            width: 320px;
+            height: 500px;
         }
-
+        
         /* Ears */
         .ear {
             position: absolute;
             width: 60px;
-            height: 150px;
+            height: 140px;
             background: #fdd835;
-            top: 0;
-            z-index: 10;
             border: 4px solid #000;
             border-bottom: none;
+            z-index: 10;
         }
-
+        
         .ear.left {
-            left: 60px;
+            left: 50px;
+            top: -20px;
             transform: rotate(-25deg);
             border-radius: 50% 50% 0 0;
-            box-shadow: -5px -5px 10px rgba(0,0,0,0.1);
         }
-
+        
         .ear.right {
-            right: 60px;
+            right: 50px;
+            top: -20px;
             transform: rotate(25deg);
             border-radius: 50% 50% 0 0;
-            box-shadow: 5px -5px 10px rgba(0,0,0,0.1);
         }
-
+        
         .ear-tip {
             position: absolute;
             width: 100%;
@@ -57,300 +60,216 @@
             background: #000;
             border-radius: 30px 30px 0 0;
         }
-
+        
         /* Head */
         .head {
             position: absolute;
-            top: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 280px;
-            height: 260px;
+            width: 240px;
+            height: 220px;
             background: #fdd835;
             border: 5px solid #000;
             border-radius: 50%;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 5;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
-
+        
         /* Eyes */
         .eye {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: #000;
             border-radius: 50%;
-            top: 80px;
+            top: 60px;
         }
-
-        .eye.left { left: 60px; }
-        .eye.right { right: 60px; }
-
+        
+        .eye.left { left: 50px; }
+        .eye.right { right: 50px; }
+        
         .eye-shine {
-            width: 15px;
-            height: 15px;
             position: absolute;
+            width: 12px;
+            height: 12px;
             background: #fff;
             border-radius: 50%;
             top: 8px;
             left: 8px;
         }
-
-        /* Eyebrows */
-        .eyebrow {
+        
+        /* Cheeks */
+        .cheek {
             position: absolute;
-            width: 30px;
-            height: 8px;
-            background: #000;
-            top: 60px;
-            border-radius: 4px;
+            width: 40px;
+            height: 40px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            border: 3px solid #000;
+            top: 100px;
         }
-
-        .eyebrow.left {
-            left: 65px;
-            transform: rotate(-10deg);
-        }
-
-        .eyebrow.right {
-            right: 65px;
-            transform: rotate(10deg);
-        }
-
+        
+        .cheek.left { left: 20px; }
+        .cheek.right { right: 20px; }
+        
         /* Nose */
         .nose {
             position: absolute;
-            width: 15px;
-            height: 10px;
+            width: 12px;
+            height: 8px;
             background: #000;
             border-radius: 50%;
-            top: 140px;
+            top: 100px;
             left: 50%;
             transform: translateX(-50%);
         }
-
+        
         /* Mouth */
         .mouth {
             position: absolute;
-            top: 160px;
+            width: 60px;
+            height: 30px;
+            top: 120px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 50px;
         }
-
+        
         .smile {
-            width: 70px;
-            height: 30px;
+            width: 60px;
+            height: 20px;
             border-bottom: 4px solid #000;
-            border-radius: 0 0 70px 70px;
-            margin: 0 auto;
+            border-radius: 0 0 50px 50px;
         }
-
+        
         .tongue {
-            width: 35px;
-            height: 25px;
+            width: 30px;
+            height: 15px;
             background: #ff5e5e;
-            border-radius: 0 0 35px 35px;
+            border-radius: 0 0 20px 20px;
             margin: -2px auto 0;
             border: 2px solid #000;
             border-top: none;
         }
-
-        /* Cheeks */
-        .cheek {
-            position: absolute;
-            width: 45px;
-            height: 45px;
-            background: #ff6b6b;
-            border-radius: 50%;
-            top: 150px;
-            border: 3px solid #000;
-            box-shadow: inset 3px 3px 5px rgba(0,0,0,0.2);
-        }
-
-        .cheek.left { left: 20px; }
-        .cheek.right { right: 20px; }
-
-        .cheek-detail {
-            position: absolute;
-            width: 10px;
-            height: 5px;
-            background: #ff8e8e;
-            border-radius: 5px;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
+        
         /* Body */
         .body {
             position: absolute;
-            top: 330px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             background: #fdd835;
             border: 5px solid #000;
-            border-radius: 50% 50% 40% 40%;
-            z-index: 3;
-            box-shadow: inset 0 10px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Belly Stripe */
-        .stripe {
-            position: absolute;
-            top: 60px;
+            border-radius: 50%;
+            top: 240px;
             left: 50%;
             transform: translateX(-50%);
-            width: 180px;
-            height: 30px;
+            z-index: 3;
+        }
+        
+        .belly {
+            position: absolute;
+            width: 140px;
+            height: 120px;
+            background: #fdd835;
+            border: 5px solid #000;
+            border-radius: 50%;
+            top: 260px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .stripe {
+            position: absolute;
+            width: 160px;
+            height: 25px;
             background: #e0a817;
-            border-radius: 15px;
+            border-radius: 12px;
             border: 3px solid #000;
+            top: 280px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 4;
         }
-
+        
         /* Arms */
         .arm {
             position: absolute;
-            width: 60px;
-            height: 80px;
+            width: 50px;
+            height: 70px;
             background: #fdd835;
             border: 4px solid #000;
-            border-radius: 30px;
-            top: 350px;
+            border-radius: 25px;
+            top: 260px;
             z-index: 2;
         }
-
+        
         .arm.left {
             left: 50px;
             transform: rotate(20deg);
         }
-
+        
         .arm.right {
             right: 50px;
             transform: rotate(-20deg);
         }
-
-        /* Hands */
-        .hand {
-            position: absolute;
-            width: 30px;
-            height: 25px;
-            background: #fdd835;
-            border: 3px solid #000;
-            border-radius: 50%;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
+        
         /* Feet */
         .foot {
             position: absolute;
-            width: 70px;
-            height: 40px;
+            width: 60px;
+            height: 35px;
             background: #fdd835;
             border: 4px solid #000;
             border-radius: 50%;
-            bottom: 50px;
+            bottom: 80px;
             z-index: 2;
         }
-
-        .foot.left {
-            left: 80px;
-            transform: rotate(-10deg);
-        }
-
-        .foot.right {
-            right: 80px;
-            transform: rotate(10deg);
-        }
-
-        /* Toes */
-        .toe {
-            position: absolute;
-            width: 10px;
-            height: 5px;
-            background: #000;
-            border-radius: 5px;
-            bottom: 5px;
-        }
-
-        .toe.left { left: 15px; }
-        .toe.middle { left: 50%; transform: translateX(-50%); }
-        .toe.right { right: 15px; }
-
+        
+        .foot.left { left: 80px; }
+        .foot.right { right: 80px; }
+        
         /* Tail */
         .tail {
             position: absolute;
-            width: 30px;
-            height: 150px;
+            width: 25px;
+            height: 120px;
             background: #fdd835;
             border: 4px solid #000;
             right: 30px;
-            top: 280px;
+            top: 220px;
             transform: rotate(30deg);
             z-index: 1;
-            border-radius: 15px;
+            border-radius: 12px;
         }
-
+        
         .tail::before {
             content: '';
             position: absolute;
-            width: 100px;
-            height: 30px;
+            width: 80px;
+            height: 25px;
             background: #fdd835;
             border: 4px solid #000;
-            top: -25px;
-            left: -80px;
+            top: -20px;
+            left: -60px;
             transform: rotate(-30deg);
-            border-radius: 15px;
+            border-radius: 12px;
         }
-
-        .tail::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            background: #fdd835;
-            border: 4px solid #000;
-            top: -50px;
-            left: -120px;
-            transform: rotate(-60deg);
-            border-radius: 15px;
-        }
-
-        /* Tail Stripes */
+        
         .tail-stripe {
             position: absolute;
             width: 100%;
-            height: 10px;
+            height: 8px;
             background: #e0a817;
-            border-radius: 5px;
+            border-radius: 4px;
         }
-
-        .tail-stripe.top { top: 20px; }
-        .tail-stripe.middle { top: 70px; }
-        .tail-stripe.bottom { top: 120px; }
-
-        /* Back Detail */
-        .back-stripe {
-            position: absolute;
-            width: 180px;
-            height: 15px;
-            background: #e0a817;
-            border-radius: 7.5px;
-            top: 370px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
+        
+        .stripe-1 { top: 20px; }
+        .stripe-2 { top: 60px; }
+        .stripe-3 { top: 100px; }
     </style>
 </head>
 <body>
-    <div class="pikachu-container">
+    <div class="pikachu">
         <!-- Ears -->
         <div class="ear left">
             <div class="ear-tip"></div>
@@ -369,9 +288,9 @@
                 <div class="eye-shine"></div>
             </div>
             
-            <!-- Eyebrows -->
-            <div class="eyebrow left"></div>
-            <div class="eyebrow right"></div>
+            <!-- Cheeks -->
+            <div class="cheek left"></div>
+            <div class="cheek right"></div>
             
             <!-- Nose -->
             <div class="nose"></div>
@@ -381,50 +300,27 @@
                 <div class="smile"></div>
                 <div class="tongue"></div>
             </div>
-            
-            <!-- Cheeks -->
-            <div class="cheek left">
-                <div class="cheek-detail"></div>
-            </div>
-            <div class="cheek right">
-                <div class="cheek-detail"></div>
-            </div>
         </div>
         
         <!-- Body -->
-        <div class="body">
-            <div class="stripe"></div>
-        </div>
+        <div class="body"></div>
+        <div class="belly"></div>
+        <div class="stripe"></div>
         
         <!-- Arms -->
-        <div class="arm left">
-            <div class="hand"></div>
-        </div>
-        <div class="arm right">
-            <div class="hand"></div>
-        </div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
         
         <!-- Feet -->
-        <div class="foot left">
-            <div class="toe left"></div>
-            <div class="toe middle"></div>
-            <div class="toe right"></div>
-        </div>
-        <div class="foot right">
-            <div class="toe left"></div>
-            <div class="toe middle"></div>
-            <div class="toe right"></div>
-        </div>
+        <div class="foot left"></div>
+        <div class="foot right"></div>
         
         <!-- Tail -->
         <div class="tail">
-            <div class="tail-stripe top"></div>
-            <div class="tail-stripe middle"></div>
-            <div class="tail-stripe bottom"></div>
+            <div class="tail-stripe stripe-1"></div>
+            <div class="tail-stripe stripe-2"></div>
+            <div class="tail-stripe stripe-3"></div>
         </div>
-        
-        <!-- Back Detail -->
-        <div class="back-stripe"></div>
     </div>
 </body>
 </html>
